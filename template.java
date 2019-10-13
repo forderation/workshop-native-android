@@ -1,10 +1,9 @@
-SQLiteDatabase db = mDbHelper.getWritableDatabase();
- 
-ContentValues values = new ContentValues();
-values.put(PetContract.PetEntry.COLUMN_PET_NAME, nameString);
-values.put(PetContract.PetEntry.COLUMN_PET_BREED, breedString);
-values.put(PetContract.PetEntry.COLUMN_PET_GENDER, mGender);
-values.put(PetContract.PetEntry.COLUMN_PET_WEIGHT, weight);
- 
-long newRowId = db.insert(PetContract.PetEntry.TABLE_NAME, null, values);
+public final class FeedReaderContract {
+    private FeedReaderContract() {}
+    public static class FeedEntry implements BaseColumns {
+        public static final String TABLE_NAME = "entry";
+        public static final String COLUMN_NAME_TITLE = "title";
+        public static final String COLUMN_NAME_SUBTITLE = "subtitle";
+    }
+}
 
